@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="mobileui/style.css">
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="utf-8">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Boo</title>
+</head>
+<body>
+    <div class="page">
+        <div class="header orange-900">
+            <h1>Spooky</h1>
+            <button class="left icon ion-android-arrow-back" onclick="backPage()"></button>
+        </div>
+
+        <p class="text-black text-strong">
+            BIG red button
+        </p>
+        <div class="space"></div>
+        <div class="space"></div>
+        <button id="spookyButton" class="red icon-circle-big text-strong text-black has-header" style="border-radius: 50%; width: 200px; height: 200px;" onclick="openPage('spookypage')">
+            Do not push
+        </button>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="mobileui/mobileui.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

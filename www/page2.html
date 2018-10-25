@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="mobileui/style.css">
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="utf-8">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <title>Gallery</title>
+</head>
+<body>
+    <div class="page">
+        <div class="header orange-900">
+            <h1>Gallery</h1> 
+            <button class="left icon ion-android-arrow-back" onclick="backPage()"></button>
+        </div>
+        <div class="content has-header black">
+            <div class="row">
+                <div class="col margin" onclick="showImage('pumpkin')">
+                    <img id="pumpkin" src="img/pumpkin.png" />
+                </div>
+
+                <div class="col margin" onclick="showImage('pumpkin2')">
+                    <img id="pumpkin2" src="img/pumpkin2.png" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col margin" onclick="showImage('pumpkin3')">
+                    <img id="pumpkin3" src="img/pumpkin3.png" />
+                </div>
+
+                <div class="col margin" onclick="showImage('halloween')">
+                    <img id="halloween" src="img/halloween.png" />
+                </div>
+            </div>
+            <div class="space"></div>
+            <div class="space"></div>
+            <div class="space"></div>
+            <h1 class="text-orange-900 text-strong">Happy Halloween!</h1>
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="mobileui/mobileui.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
