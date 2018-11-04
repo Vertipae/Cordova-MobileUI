@@ -1,4 +1,31 @@
+$(document).on("ready", function () {
+    databaseHandler.createDatabase();
+});
 
+function addUser() {
+    var email = $("#txtEmail").val();
+    var password = $("#txtPassword").val();
+
+    if (!email) {
+        alert("Email is required");
+    } else {
+        var r = confirm("Register?" + "\n" + "Email: " + email + "\n" + "Password: ")
+        if (r == true) {
+            password.
+            userHandler.addUser(email, password);
+            $("txtEmail").val("");
+            $("txtPassword").val("");
+        }
+        closeMenu('registerMenu')
+    }
+}
+
+function login() {
+    var email = $("#loginEmail").val();
+    var password = $("#loginPassword").val();
+    var userid = "" + email + password
+    userHandler.getUser(userid)
+}
 
 
 

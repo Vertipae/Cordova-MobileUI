@@ -1,21 +1,38 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
+<head>
     <link rel="stylesheet" type="text/css" href="mobileui/style.css">
-        <meta name="format-detection" content="telephone=no">
-        <meta charset="utf-8">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <title>Login</title>
-        <style>
-            #titleLogin {
-                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-                font-size: 30px;
-                
-            }
-        </style>
-    </head>
+    <meta name="format-detection" content="telephone=no">
+    <meta charset="utf-8">
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- Include meta tag to ensure proper rendering and touch zooming -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">-->
+    <!-- Include jQuery Mobile stylesheets -->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <!-- Include the jQuery library -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+
+    <script type="text/javascript" src="js/databaseHandler.js"></script>
+    <script type="text/javascript" src="js/userHandler.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+
+
+    <!-- Include the jQuery Mobile library -->
+   <!--<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+
+    <title>Login</title>
+    <style>
+        #titleLogin {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 30px;
+        }
+    </style>
+</head>
     <body class="amber-900 align-center" style="background-image:url('img/pumpkin.png'); background-repeat:no-repeat; background-size:cover; background-position: 0px 285px;">
         <i class="icon ion-heart red"></i>
 
@@ -26,20 +43,40 @@
         <div class="list border-big white-opacity-30">
             <div class="item align-left">
                 <label class="text-black">Email</label>
-                <input type="email" />
+                <input type="email" id="loginEmail" />
             </div>
             <div class="item  align-left">
                 <label class="text-black">Password</label>
-                <input type="password" />
+                <input type="password" id="loginPassword" />
             </div>
-        </div>
-        <button class="orange-900 radius full" onclick="openPage('page1')">Login user</button>
+            </div>
+            <button class="orange-900 radius full" onclick="login()">Login user</button>
+            <button class="deep-orange-900 radius full" onclick="openMenu('registerMenu')">Register</button>
 
+            <div class="menu menu-right white-opacity-90" id="registerMenu"style="background-image:url('img/pumpkin.png'); background-repeat:no-repeat; background-position: 50px 200px;">
+                <div class="list no-border">
+                    <div class="item red">
+                        <h1>Register new account</h1>
+                    </div>
 
+                    <div class="item">
+                        <input type="email" placeholder="Email" id="txtEmail" />
+                    </div>
+
+                    <div class="item">
+                        <input type="password" placeholder="Password" id="txtPassword" />
+                    </div>
+
+                    <div class="item">
+                        <button class="red radius-full" onclick="addUser()">Register</button>
+                    </div>
+                </div>
+            </div>
+       
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="mobileui/mobileui.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        
 
         <script>
             function deleteItem() {
