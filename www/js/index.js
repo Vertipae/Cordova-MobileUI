@@ -11,7 +11,6 @@ function addUser() {
     } else {
         var r = confirm("Register?" + "\n" + "Email: " + email + "\n" + "Password: ")
         if (r == true) {
-            password.
             userHandler.addUser(email, password);
             $("txtEmail").val("");
             $("txtPassword").val("");
