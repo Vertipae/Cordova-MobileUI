@@ -12,95 +12,81 @@
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/css/ol.css">
 
     <!-- Include the jQuery library -->
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
     <script type="text/javascript" src="js/databaseHandler.js"></script>
     <script type="text/javascript" src="js/userHandler.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
 
 
+
     <!-- Include the jQuery Mobile library -->
-   <!--<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+    <!--<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
 
-    <title>Login</title>
-    <style>
-        #titleLogin {
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            font-size: 30px;
-        }
-    </style>
+    <title>Welcome</title>
+   
 </head>
-    <body class="amber-900 align-center" style="background-image:url('img/pumpkin.png'); background-repeat:no-repeat; background-size:cover; background-position: 0px 285px;">
-        <i class="icon ion-heart red"></i>
-
-        <h1 id="titleLogin" class="text-amber">Sallamaarit's App</h1>
-        <p class="text-black text-strong">Dare to enter?</p>
-
-
-        <div class="list border-big white-opacity-30">
-            <div class="item align-left">
-                <label class="text-black">Email</label>
-                <input type="email" id="loginEmail" />
+<body>
+    <!--Sallamaarit Jaako-->
+    <!--Swiper-->
+    <div class="swiper-container swiper-container-fullscreen">
+        <div class="swiper-wrapper">
+            <!--Slide 1-->
+            <div class="swiper-slide vertical-align-center black">
+                <i class="icon ion-beer orange-900"></i>
+                <h1>Welcome to </h1>
+                <h2 class="text-grey">SpookyApp</h2>
+                <p class="text-orange-900">
+                    Be careful.. or you will be stuck here forever..
+                </p>
             </div>
-            <div class="item  align-left">
-                <label class="text-black">Password</label>
-                <input type="password" id="loginPassword" />
+            <!--slide 2-->
+            <div class="swiper-slide vertical-align-center black">
+                <i class="icon ion-android-calendar amber"></i>
+                <h1 class="text-deep-orange-900">Want to.. </h1>
+                <p class="text-orange-800">
+                    get spooked?
+                </p>
+                <button class="border-white text-amber radius margin-top" onclick="openPage('login')">Login</button>
             </div>
-            </div>
-            <button class="orange-900 radius full" onclick="login()">Login user</button>
-            <button class="deep-orange-900 radius full" onclick="openMenu('registerMenu')">Register</button>
+        </div>
+        <!--Pagination-->
+        <div class="swiper-pagination swiper-pagination-white"></div>
+    </div>
 
-            <div class="menu menu-right white-opacity-90" id="registerMenu"style="background-image:url('img/pumpkin.png'); background-repeat:no-repeat; background-position: 50px 200px;">
-                <div class="list no-border">
-                    <div class="item red">
-                        <h1>Register new account</h1>
-                    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="mobileui/mobileui.js"></script>
 
-                    <div class="item">
-                        <input type="email" placeholder="Email" id="txtEmail" />
-                    </div>
 
-                    <div class="item">
-                        <input type="password" placeholder="Password" id="txtPassword" />
-                    </div>
+    <script>
+        // When you click the spooky button it gives you an alert message
+        function deleteItem() {
+            alert({
+                title: 'Boo Warning!',
+                message: 'I told you not to push the BIG red button. Now Im going to spook you forever !',
+                class: 'red',
+                buttons: [
+                    {
+                        label: 'FOREVER',
+                        class: 'red-900'
+                    },
+                ]
+            });
+        }
+    </script>
+    <script>
+        // Swiper pagination
+        function getSwiper() {
+            new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination',
+                paginationClickable: true
+            });
+        }
 
-                    <div class="item">
-                        <button class="red radius-full" onclick="addUser()">Register</button>
-                    </div>
-                </div>
-            </div>
-       
-
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="mobileui/mobileui.js"></script>
-        
-
-        <script>
-            function deleteItem() {
-                alert({
-                    title: 'Boo Warning!',
-                    message: 'I told you not to push the BIG red button. Now Im going to spook you forever !',
-                    class: 'red',
-                    buttons: [
-                        {
-                            label: 'FOREVER',
-                            class: 'red-900'
-                        },
-                    ]
-                });
-            }
-        </script>
-        <script>
-            function getSwiper() {
-                new Swiper('.swiper-container', {
-                    pagination: '.swiper-pagination',
-                    paginationClickable: true
-                });
-            }
-            
-        </script>
-    </body>
+    </script>
+</body>
 </html>

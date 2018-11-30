@@ -1,11 +1,17 @@
+// upon startup create database and swiper
 $(document).on("ready", function () {
     databaseHandler.createDatabase();
+    new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true
+    });
 });
 
+// Adds user when they click register button
 function addUser() {
     var email = $("#txtEmail").val();
     var password = $("#txtPassword").val();
-
+    // Alerts if email is missing else its adds user and closes register menu
     if (!email) {
         alert("Email is required");
     } else {
@@ -19,15 +25,17 @@ function addUser() {
     }
 }
 
+// When user clicks login button 
 function login() {
     var email = $("#loginEmail").val();
     var password = $("#loginPassword").val();
     var userid = "" + email + password
+    // call getUser in userHandler
     userHandler.getUser(userid)
 }
 
 
-
+// When switching to page where swiper is needed, create new swipers
 document.addEventListener('openPage', function (e) {
     if (e.detail.page == 'page4.html') {
         new Swiper('.swiper-container', {
@@ -35,10 +43,19 @@ document.addEventListener('openPage', function (e) {
             paginationClickable: true
         });
     }
+    if (e.detail.page == 'index.html') {
+        new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true
+        });
+    }
 })
+
+
 
 var src = null
 
+// Image preview
 function showImage(img) {
     src = document.getElementById(img).src
     openPage('preview', function () {
@@ -47,4 +64,37 @@ function showImage(img) {
     })
 }
 
+// Geolocation
 
+function getMapLocation() {
+    navigator.geolocation.getCurrentPosition
+        (onMapSuccess, onMapError, { enableHighAccuracy: true });
+}
+
+// Success callback for get geo coordinates
+var onMapSuccess = function (position) {
+
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+
+    // navigator.geolocation coordinates needs to be converted to other format:
+    let center = ol.proj.transform([lon, lat], 'EPSG:4326', 'EPSG:3857');
+
+    new ol.Map({
+        layers: [
+            new ol.layer.Tile({
+                source: new ol.source.OSM()
+            })
+        ],
+        target: 'map',
+        view: new ol.View({
+            center: center,
+            zoom: 15
+        })
+    });
+}
+// Error callback for get geo coordinates
+function onMapError(error) {
+    console.log('code: ' + error.code + '\n' +
+        'message: ' + error.message + '\n');
+}

@@ -1,5 +1,5 @@
 ﻿var userHandler = {
-   
+   //Add the record in database, it adds record or row in Web SQL (SQLite)
     addUser: function (username, password) {
 
         let userid = "" + username + password
@@ -18,7 +18,7 @@
             function () { }
         );
     },
-
+    // Get the information of user searched for
     getUser: function (userid) {
         databaseHandler.db.transaction(
             function (tx) {

@@ -10,49 +10,95 @@
     <title>Gallery</title>
 </head>
 <body>
-
+    <!--Sallamaarit Jaako-->
     <div class="page">
+        <!--Menu with buttons-->
         <div class="menu black-opacity-90 padding" id="menu" style="background-image:url('img/pumpkin.png'); background-repeat:no-repeat; background-position: 50px 200px;">
             <button class="black-opacity-30 text-amber text-strong full" onclick="openPage('page2')">Gallery</button>
             <button class="black-opacity-30 text-amber text-strong full" onclick="openPage('page3')">Spooky</button>
-            <button class="black-opacity-30 text-amber text-strong full" onclick="openPage('page4')">Swiper</button>
+            <button class="black-opacity-30 text-amber text-strong full" onclick="openPage('page4')">Contact</button>
+            <button class="black-opacity-30 text-amber text-strong full" onclick="openPage('login')">Logout</button>
         </div>
 
         <div class="header orange-900">
             <button class="left icon ion-navicon" onclick="openMenu('menu')"></button>
             <h1>MobileUI Demo</h1>
         </div>
+        <!--Tab buttons placed as footer-->
         <div class="footer amber-900 tab">
             <button class="icon ion-android-person" onclick="openTab('tabWelcome')">Welcome</button>
             <button class="icon ion-android-home" onclick="openTab('tabHome')">Home</button>
             <button class="icon ion-android-happy" onclick="openTab('tabAbout')">About</button>
         </div>
+        <!--Tab Welcome-->
         <div class="tab-content active" id="tabWelcome">
 
-            <h2 class="text-strong has-header padding text-deep-orange-900">Welcome</h2>
-            <p class="text-deep-orange-900">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <h2 class="text-strong has-header padding text-deep-orange-900 align-center">App instructions</h2>
+            <p class="text-deep-orange-900 align-center">
+                Welcome to <b>SpookyApp!</b>
             </p>
+            <div class="space"></div>
+            <p class="text-deep-orange-900 align-center">
+                In here you can find<b> Gallery, Spooky page, Contact</b> and<b> Logout</b> from the menu.
+            </p>
+            <div class="space"></div>
+            <p class="text-deep-orange-900 align-center">
+
+                In <b>gallery</b> you can click the pictures and they will open in preview view.
+            </p>
+            <div class="space"></div>
+            <p class="text-deep-orange-900 align-center">
+
+                <b>Spooky page </b>has a surprise for you.. Well you will see it when you enter the page but be careful..
+            </p>
+            <div class="space"></div>
+            <p class="text-deep-orange-900 align-center">
+
+                From the <b>Contact</b> you can find my contact information.
+            </p>
+            <div class="space"></div>
+            <p class="text-deep-orange-900 align-center">
+
+                From the tabs you can find <b> Home page</b> where you can see your location.
+            </p>
+            <div class="space"></div>
+            <p class="text-deep-orange-900 align-center">
+
+                When you are ready you can <b>logout</b> from the app.
+            </p>
+            <div class="space"></div>
+            <div class="space"></div>
+
+            <p class="text-deep-orange-900 align-center">Have a day that is full of horrors but is still <b>oossom </b>! ^.^</p>
+
+
         </div>
+        <!--Tab Home-->
         <div class="tab-content" id="tabHome">
-            <h2 class="text-strong has-header padding text-deep-orange-900">Home</h2>
-            <p class="text-deep-orange-900">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <h2 class="text-strong has-header padding text-deep-orange-900 align-center">Home</h2>
+            <p class="text-deep-orange-900 align-center">
+                App knows where you are..
+            </p>
+            <div class="mapContainer" id="map"></div>
+            <button onclick="getMapLocation()" class="orange-900 radius full">You are..</button>
+
+        </div>
+        <!--Tab About-->
+        <div class="tab-content" id="tabAbout">
+            <h2 class="text-strong has-header padding text-deep-orange-900 align-center">About</h2>
+            <p class="text-deep-orange-900 align-center">
+                This is app uses <b>MobileUI </b> components such as menu, header, tab, input, list, page, grid, swiper and alert.
+            </p>
+            <p class="text-deep-orange-900 align-center">
+                This app has been made for course <b>R0335-TON1811 Building and Deploying Cross Platform Mobile Apps</b>
+            </p>
+            <div class="space"></div>
+            <p class="text-deep-orange-900 align-center">
+                Here is a cat picture because cats makes apps better
             </p>
             <img id="happyPonde" src="img/HappyPonde.jpg" />
-        </div>
-        <div class="tab-content" id="tabAbout">
-            <h2 class="text-strong has-header padding text-deep-orange-900">About</h2>
-            <p class="text-deep-orange-900">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <div class="space"></div>
-            <div class="space"></div>
-            <div class="space"></div>
-            <button class="blue icon-text">
-                <i class="icon ion-social-facebook"></i>
-                Facebook
-            </button>
+
+
         </div>
 
     </div>

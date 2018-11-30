@@ -1,4 +1,5 @@
-﻿var databaseHandler = {
+﻿// Create the database
+var databaseHandler = {
     db: null,
     createDatabase: function () {
         this.db = window.openDatabase(
@@ -18,6 +19,7 @@
                     }
                 );
             },
+            // Error message
             function (error) {
                 console.log("Transaction error:" + error.message);
             },
