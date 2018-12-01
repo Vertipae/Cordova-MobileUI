@@ -1,10 +1,16 @@
 // upon startup create database and swiper
 $(document).on("ready", function () {
     databaseHandler.createDatabase();
-    new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        paginationClickable: true
-    });
+    // Check if user is already logged in
+    var user = window.localStorage.getItem("user");
+    if (user) {
+        openPage('page1')
+    } else {
+        new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true
+        });
+    }
 });
 
 // Adds user when they click register button
@@ -32,6 +38,12 @@ function login() {
     var userid = "" + email + password
     // call getUser in userHandler
     userHandler.getUser(userid)
+}
+
+// Remove credentials from localStorage and open login page
+function logout() {
+    window.localStorage.removeItem("user");
+    openPage('login')
 }
 
 

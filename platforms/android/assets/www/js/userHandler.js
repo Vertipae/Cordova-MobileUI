@@ -27,6 +27,9 @@
                     [userid],
                     function (tx, results) {
                         if (results.rows.length === 1) {
+                            // Set found user as logged in
+                            console.log(results);
+                            window.localStorage.setItem("user", results.rows[0].username);
                             openPage('page1')
                         }
                     },
